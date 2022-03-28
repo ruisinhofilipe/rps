@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK PAPER SCISSORS</title>
+</head>
+<body>
+    <script>
+    
+    function computerPlay(){
+        let computerTurn = ["ROCK","PAPER", "SCISSORS"][Math.floor(Math.random() * 3)];
+        return computerTurn;
+    }
+
+    function playerPlay(){
+        let playerTurn = prompt("Choose between rock, paper or scissors: ");
+        playerTurn = playerTurn.toUpperCase();
+        return playerTurn;
+    }
+
+    let win = "You win! ", tie = "That's a draw. ", lose = "You lost! ";
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function playRound(playerSelection,computerSelection){
+        if(playerSelection == "ROCK"){
+            if(computerSelection == "ROCK"){
+                return tie + "You selected " + playerSelection + " and the computer also selected " + computerSelection;
+            }else if(computerSelection == "PAPER"){
+                computerScore++;
+                return lose + "You selected " + playerSelection + " and the computer selected " + computerSelection;
+            }else{
+                playerScore++;
+                return win + "You selected " + playerSelection + " and the computer selected " + computerSelection;
+            }
+        }
+        if(playerSelection == "PAPER"){
+            if(computerSelection == "ROCK"){
+                playerScore++;
+                return win + "You selected " + playerSelection + " and the computer also " + computerSelection;
+            }else if(computerSelection == "PAPER"){
+                return tie + "You selected " + playerSelection + " and the computer also selected " + computerSelection;
+            }else{
+                computerScore++;
+                return lose + "You selected " + playerSelection + " and the computer selected " + computerSelection;
+            }
+        }
+        if(playerSelection == "SCISSORS"){
+            if(computerSelection == "ROCK"){
+                computerScore++;
+                return lose + "You selected " + playerSelection + " and the computer selected " + computerSelection;
+            }else if(computerSelection == "PAPER"){
+                playerScore++;
+                return win + "You selected " + playerSelection + " and the computer selected " + computerSelection;
+            }else{
+                return tie + "You selected " + playerSelection + " and the computer also selected " + computerSelection;
+            }
+        }
+    }
+    
+    function game(){
+        for(let i = 0; i < 5; i++){
+            const computerSelection = computerPlay();
+            let playerSelection = playerPlay();
+            console.log(playRound(playerSelection, computerSelection));
+            console.log("Player score: " + playerScore);
+            console.log("Computer's score: " + computerScore); 
+        }
+    }
+
+    game();
+   
+
+    
+
+   
+
+
+    </script>
+</body>
+</html>
