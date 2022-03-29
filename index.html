@@ -5,79 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI - ROCK PAPER SCISSORS</title>
+    <script src="script.js" defer></script>
+    <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
-    <script>
-    
-    function computerPlay(){
-        let computerTurn = ["ROCK","PAPER", "SCISSORS"][Math.floor(Math.random() * 3)];
-        return computerTurn;
-    }
+    <div class="main-container">    <!--   1  -->
+        <div id="main-tittle">  <!--   2  -->
+            <h1>ROCK PAPER SCISSORS</h1>
+        </div>
+        <div class="humanVsRobot">  <!--   3  -->
+            <div class="container-imgs">
+                <img src = "./img/person.jpg" alt = "person sillhoutte">
+                <img src = "./img/vs.jpg" alt = "vs icon">
+                <img src = "./img/robot.png" alt = "robot sillhoute">
+            </div>
+            <div class="container-score">
+                 <div class="humans-p">
+                     <p>Humans: 0</p>
+                </div>
+                <div class="robots-p">
+                    <p>Robots: 0</p>
+                </div> 
+            </div>
+            <div class="container-options">   <!--   4  -->
+                <img class = "rockImg" id = "ROCK" src = "./img/rock.jpg" alt = "Rock icon">
+                <img class = "paperImg" id = "PAPER" src = "./img/paper.png" alt = "Paper icon">
+                <img class = "scissorsImg" id = "SCISSORS" src = "./img/scissors.png" alt = "Scissors icon">
+            </div>
+        </div>
+    </div>
 
-    function playerPlay(){
-        let playerTurn = prompt("Choose between rock, paper or scissors: ");
-        playerTurn = playerTurn.toUpperCase();
-        return playerTurn;
-    }
-
-    let win = "You win! ", tie = "That's a draw. ", lose = "You lost! ";
-    let playerScore = 0;
-    let computerScore = 0;
-
-    function playRound(playerSelection,computerSelection){
-        if(playerSelection == "ROCK"){
-            if(computerSelection == "ROCK"){
-                return tie + "You selected " + playerSelection + " and the computer also selected " + computerSelection;
-            }else if(computerSelection == "PAPER"){
-                computerScore++;
-                return lose + "You selected " + playerSelection + " and the computer selected " + computerSelection;
-            }else{
-                playerScore++;
-                return win + "You selected " + playerSelection + " and the computer selected " + computerSelection;
-            }
-        }
-        if(playerSelection == "PAPER"){
-            if(computerSelection == "ROCK"){
-                playerScore++;
-                return win + "You selected " + playerSelection + " and the computer also " + computerSelection;
-            }else if(computerSelection == "PAPER"){
-                return tie + "You selected " + playerSelection + " and the computer also selected " + computerSelection;
-            }else{
-                computerScore++;
-                return lose + "You selected " + playerSelection + " and the computer selected " + computerSelection;
-            }
-        }
-        if(playerSelection == "SCISSORS"){
-            if(computerSelection == "ROCK"){
-                computerScore++;
-                return lose + "You selected " + playerSelection + " and the computer selected " + computerSelection;
-            }else if(computerSelection == "PAPER"){
-                playerScore++;
-                return win + "You selected " + playerSelection + " and the computer selected " + computerSelection;
-            }else{
-                return tie + "You selected " + playerSelection + " and the computer also selected " + computerSelection;
-            }
-        }
-    }
-    
-    function game(){
-        for(let i = 0; i < 5; i++){
-            const computerSelection = computerPlay();
-            let playerSelection = playerPlay();
-            console.log(playRound(playerSelection, computerSelection));
-            console.log("Player score: " + playerScore);
-            console.log("Computer's score: " + computerScore); 
-        }
-    }
-
-    game();
-   
-
-    
-
-   
-
-
-    </script>
 </body>
 </html>
