@@ -7,16 +7,15 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    align-content: center;
-    
 }
 
+/* Page tittle */
 #main-tittle {
     align-self: center;
     text-align: center;
     margin: 30px 0px 0px;
     padding: 20px;
-    width: 600px;
+    width: 500px;
     border-radius: 15px;
     background-color: #C38D9D;
 }
@@ -26,6 +25,7 @@
     background-color: #C38D9D;
 }
 
+/* Container of the images Human vs Robot / Scores and details about each round / Player options (ROCK PAPER SCISSERS*/
 .humanVsRobot { 
     display: flex;
     flex-direction: column;
@@ -34,8 +34,7 @@
     padding: 5px;
     border-radius: 15px;
     background-color: #C38D9D;
-    width: 1250px;
-    
+    width: 1150px; 
  }
 
  .container-imgs {
@@ -52,7 +51,7 @@
 .container-imgs img {
     width: 100px;
     height: 100px;
-    padding: 20px;
+    padding: 10px;
     margin: 15px;
     background-color: #41B3A3;
 }
@@ -60,19 +59,36 @@
 .container-score {
     align-self: center;
     display: flex;
-    justify-content: space-between;
-    padding:20px;
+    flex-direction: column;
+    padding:15px;
     width: 650px;
     border-radius: 10px;
     background-color: #85cdca;
-    ;
+}
+
+.everyScore {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    background-color:#85cdca;
+    margin-bottom: 40px;
 }
 
 .humans-p,
-.robots-p {
-    font-size: 25px;
-    padding: 15px;
-    border-radius: 5px;
+.robots-p,
+.ties-p     {
+border-radius: 5px;
+font-size: 20px;
+padding: 10px;
+}
+
+.round-result {
+    padding: 5px;
+    border-radius: 10px;
+}
+.round-p {
+    font-size: 18px;
+    padding: 5px;
 }
 
 .container-options {
@@ -99,6 +115,7 @@
     transform: scale(1.15);
     transition: 0.5s;
     opacity: 2;
+    cursor: pointer;
 }
 
 

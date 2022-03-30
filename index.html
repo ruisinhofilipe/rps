@@ -9,25 +9,33 @@
     <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
-    <div class="main-container">    <!--   1  -->
-        <div id="main-tittle">  <!--   2  -->
+    <div class="main-container">   
+        <div id="main-tittle">  
             <h1>ROCK PAPER SCISSORS</h1>
         </div>
-        <div class="humanVsRobot">  <!--   3  -->
+        <div class="humanVsRobot">  
             <div class="container-imgs">
                 <img src = "./img/person.jpg" alt = "person sillhoutte">
                 <img src = "./img/vs.jpg" alt = "vs icon">
                 <img src = "./img/robot.png" alt = "robot sillhoute">
             </div>
             <div class="container-score">
-                 <div class="humans-p">
-                     <p>Humans: 0</p>
-                </div>
-                <div class="robots-p">
-                    <p>Robots: 0</p>
+                <div class="everyScore">
+                    <div class="humans-p">
+                        <p class = "player-score">Human: 0</p>
+                    </div>
+                    <div class="ties-p">
+                        <p class = "ties-score">Ties: 0</p>
+                    </div>
+                    <div class="robots-p">
+                        <p class = "robot-score">Robot: 0</p>
+                    </div>
+                </div>   
+                <div class="round-result">
+                    <p class = "round-p">Result: </p>
                 </div> 
             </div>
-            <div class="container-options">   <!--   4  -->
+            <div class="container-options"> 
                 <img class = "rockImg" id = "ROCK" src = "./img/rock.jpg" alt = "Rock icon">
                 <img class = "paperImg" id = "PAPER" src = "./img/paper.png" alt = "Paper icon">
                 <img class = "scissorsImg" id = "SCISSORS" src = "./img/scissors.png" alt = "Scissors icon">
