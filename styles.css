@@ -1,7 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
-    background-color: #41B3A3;
+    background-color: #143d59;
 }
 
 .main-container {
@@ -16,13 +16,14 @@
     margin: 30px 0px 0px;
     padding: 20px;
     width: 500px;
-    border-radius: 15px;
-    background-color: #C38D9D;
+    border-radius: 5px;
+    background-color: #f4b41a;
 }
 
 #main-tittle h1{
     font-size: 40px;
-    background-color: #C38D9D;
+    background-color: #f4b41a;
+    color:  #143d59;
 }
 
 /* Container of the images Human vs Robot / Scores and details about each round / Player options (ROCK PAPER SCISSERS*/
@@ -32,28 +33,28 @@
     align-self: center;
     margin: 30px;
     padding: 5px;
-    border-radius: 15px;
-    background-color: #C38D9D;
+    border-radius: 5px;
+    background-color: #f4b41a;
     width: 1150px; 
  }
 
  .container-imgs {
     display: flex;
     align-self: center;
-    justify-content: space-around;
+    justify-content: center;
     margin: 50px;
     padding: 20px;
     background-color: #85cdca;
-    border: solid #41B3A3 7px;   
+    border: solid #143d59 7px;   
     border-radius: 5px;
     width: 800px; 
 }
 .container-imgs img {
     width: 100px;
     height: 100px;
-    padding: 10px;
+    padding: 20px;
     margin: 15px;
-    background-color: #41B3A3;
+    opacity: 0.79;
 }
 
 .container-score {
@@ -62,33 +63,46 @@
     flex-direction: column;
     padding:15px;
     width: 650px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #85cdca;
+    border: solid #143d59 7px; 
 }
 
 .everyScore {
     display: flex;
     justify-content: space-around;
     margin: 10px;
-    background-color:#85cdca;
+    background-color: #85cdca;
     margin-bottom: 40px;
+}
+
+.player-score,
+.ties-score,
+.robot-score {
+    background-color: #528AAE;
 }
 
 .humans-p,
 .robots-p,
 .ties-p     {
-border-radius: 5px;
-font-size: 20px;
-padding: 10px;
+    background-color: #528AAE;   
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 15px;
+    border: solid #143d59 3px; 
 }
 
 .round-result {
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 3px;
+    border: solid #143d59 3px; 
+    background-color: #528AAE;  
 }
 .round-p {
-    font-size: 18px;
-    padding: 5px;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #528AAE;  
 }
 
 .container-options {
@@ -98,7 +112,7 @@ padding: 10px;
     margin: 50px;
     padding: 20px;
     background-color: #85cdca;
-    border: solid #41B3A3 7px;   
+    border: solid #143d59 7px;   
     border-radius: 5px;
     width: 800px;
 }
@@ -119,6 +133,47 @@ padding: 10px;
 }
 
 
+/* MODS of NEW DIV and NEW PARA created for display who won  */
+.newDiv {
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 30px;
+    background-color: #528AAE;
+    border: solid #143d59 7px;  
+}
+
+.newPara {
+    font-size: 18px;
+    padding: 5px;
+    background-color: #528AAE; 
+    color:#f4b41a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* MODS of DIV PLAY AGAIN and PLAY AGAIN BUTTON created for play again the game */
+.divPlayAgain {
+    padding: 5px;
+    margin-top: 30px;
+    background-color: #85cdca;
+    display: flex;
+    justify-content: center;
+}
+
+.playAgain {
+    border: solid #143d59 4px; 
+    border-radius: 5px;
+    padding: 10px;
+    color: #f4b41a;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #528AAE;
+    cursor: pointer; 
+}
+
+.playAgain:active {
+    opacity: 0.7;
+}
 
 
 

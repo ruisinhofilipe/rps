@@ -1,13 +1,13 @@
 let playerScore = 0;
 let robotScore = 0;
 let tiesScore = 0;
+let result = "";
 
 // Robot selection between ROCK PAPER OR SCISSORS
 function robotPlay(){
     let robotTurn = ["ROCK","PAPER", "SCISSORS"][Math.floor(Math.random() * 3)];
     return robotTurn;
 }
-
 
 function game(){
     let imgs = document.querySelectorAll(".container-options img");
@@ -20,8 +20,8 @@ function game(){
         // live update of the scores according to the games
         document.querySelector(".player-score").textContent = "Human: " +  playerScore;
         document.querySelector(".robot-score").textContent = "Robot: " +  robotScore;
-        document.querySelector(".ties-score").textContent = "ties: " +  tiesScore;
-        // document.querySelector(".round-p").textContent = "Result: " +  playRound(playerChoice, robotChoice);
+        document.querySelector(".ties-score").textContent = "Ties: " +  tiesScore;
+        document.querySelector(".round-p").textContent = "Result: " +  result;
 
         controllWins();
         })
@@ -29,41 +29,96 @@ function game(){
 }
 
 //outcome of each round played
-
 function playRound(playerSelection, robotSelection){
-let win = "You win!" + " You selected " + playerSelection + " and the robot selected " + robotSelection + "."
-let lose = "You lost!" + " You selected " + playerSelection + " and the robot selected: " + robotSelection + "."
-let draw = "That's a draw!" + " You selected " + playerSelection + " and the robot selected " + robotSelection + "."
-
+let win = "You win!" + " You selected " + playerSelection + " and the robot selected " + robotSelection + ".";
+let lose = "You lost!" + " You selected " + playerSelection + " and the robot selected " + robotSelection + ".";
+let draw = "That's a draw!" + " You selected " + playerSelection + " and the robot selected " + robotSelection + ".";
     if(playerSelection === robotSelection){
         tiesScore++;
-        console.log(draw);
+        result = draw;
     }else if((playerSelection === "ROCK") && (robotSelection === "PAPER")){
         robotScore++;
-        console.log(lose);
+        result = lose;
     }else if((playerSelection === "ROCK") && (robotSelection === "SCISSORS")){
         playerScore++;
-        console.log(win);
+        result = win;
     }else if((playerSelection === "PAPER") && (robotSelection === "SCISSORS")){
         robotScore++;
-        console.log(lose);
+        result = lose;
      }else if((playerSelection === "PAPER") && (robotSelection === "ROCK")){
         playerScore++;
-        console.log(win);
+        result = win;
     }else if((playerSelection === "SCISSORS") && (robotSelection === "PAPER")){
         playerScore++;
-        console.log(win);
+        result = win;
     }else{
         robotScore++;
-        console.log(lose);
+        result = lose;
     }
 }
 
+//Function keep updating the result until 5 wins
 function controllWins(){
     if(playerScore === 5){
-        alert("You Won!")
-    }else if(robotScore === 5){
-        alert("Robot Won!")
+        playerWin();
+        invisibleImgs();
+        }else if(robotScore === 5){
+        robotWin();
+        invisibleImgs();
     }
 }
+
+// Function when player wins
+function playerWin(){
+    const divContainer = document.querySelector(".container-score");
+    // CREATE newDiv and its newPara for display who won in the end 
+    const div = document.createElement("div");
+    div.classList.add("newDiv");
+    const divPara = document.createElement("p");
+    divPara.classList.add("newPara");
+    divPara.textContent = "You won! Thank you for saving humanity! :)";
+    div.appendChild(divPara);
+    divContainer.appendChild(div);
+
+    //CREATE PLAY AGAIN BUTTON
+    const divPlayAgain = document.createElement("div");
+    divPlayAgain.classList.add("divPlayAgain");
+    const playAgain = document.createElement("button");
+    playAgain.classList.add("playAgain");
+    playAgain.textContent = "PLAY AGAIN";
+    divPlayAgain.appendChild(playAgain);
+    divContainer.appendChild(divPlayAgain);
+}
+
+// Function when robot wins
+function robotWin(){
+    const divContainer = document.querySelector(".container-score");
+    // CREATE newDiv and its newPara for display who won in the end
+    const div = document.createElement("div");
+    div.classList.add("newDiv");
+    const divPara = document.createElement("p");
+    divPara.classList.add("newPara");
+    divPara.textContent = "You lost ... The end is near :(";
+    div.appendChild(divPara);
+    divContainer.appendChild(div);
+    
+    //CREATE PLAY AGAIN BUTTON
+    const divPlayAgain = document.createElement("div");
+    divPlayAgain.classList.add("divPlayAgain");
+    const playAgain = document.createElement("button");
+    playAgain.classList.add("playAgain");
+    playAgain.textContent = "PLAY AGAIN";
+    divPlayAgain.appendChild(playAgain);
+    divContainer.appendChild(divPlayAgain);
+
+    
+    
+}
+
+//Function to make imgs/options invisibles
+function invisibleImgs(){
+    const containerHidden = document.querySelector(".container-options");
+    containerHidden.style.visibility = "hidden";
+}
+
 game();
