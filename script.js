@@ -1,7 +1,7 @@
 let playerScore = 0;
 let robotScore = 0;
 let tiesScore = 0;
-let result = "";
+let result = ""
 
 // Robot selection between ROCK PAPER OR SCISSORS
 function robotPlay(){
@@ -10,6 +10,7 @@ function robotPlay(){
 }
 
 function game(){
+
     let imgs = document.querySelectorAll(".container-options img");
     imgs.forEach(img => {
         img.addEventListener("click", () => {
@@ -88,6 +89,11 @@ function playerWin(){
     playAgain.textContent = "PLAY AGAIN";
     divPlayAgain.appendChild(playAgain);
     divContainer.appendChild(divPlayAgain);
+
+    //PLAY AGAIN RESET
+    playAgain.addEventListener('click', () => {
+        location.reload();
+        })
 }
 
 // Function when robot wins
@@ -110,6 +116,10 @@ function robotWin(){
     playAgain.textContent = "PLAY AGAIN";
     divPlayAgain.appendChild(playAgain);
     divContainer.appendChild(divPlayAgain);
+    //PLAY AGAIN RESET
+    playAgain.addEventListener('click', () => {
+        location.reload();
+        })
 
     
     
