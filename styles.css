@@ -26,7 +26,7 @@
     color:  #143d59;
 }
 
-/* Container of the images Human vs Robot / Scores and details about each round / Player options (ROCK PAPER SCISSERS*/
+/* Container of the images Human vs Robot / Scores and details about each round / Player options (ROCK PAPER SCISSERS) */
 .humanVsRobot { 
     display: flex;
     flex-direction: column;
@@ -131,7 +131,6 @@
     opacity: 2;
     cursor: pointer;
 }
-
 
 /* MODS of NEW DIV and NEW PARA created for display who won  */
 .newDiv {

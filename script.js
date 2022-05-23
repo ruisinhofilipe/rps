@@ -1,7 +1,7 @@
 let playerScore = 0;
 let robotScore = 0;
 let tiesScore = 0;
-let result = ""
+let result = "";
 
 // Robot selection between ROCK PAPER OR SCISSORS
 function robotPlay(){
@@ -9,16 +9,17 @@ function robotPlay(){
     return robotTurn;
 }
 
+// Game function
 function game(){
 
     let imgs = document.querySelectorAll(".container-options img");
     imgs.forEach(img => {
         img.addEventListener("click", () => {
-        playerChoice = img.id;
-        const robotChoice = robotPlay();
+        let playerChoice = img.id;
+        let robotChoice = robotPlay();
         playRound(playerChoice, robotChoice);
 
-        // live update of the scores according to the games
+        // live update of the scores according to the result
         document.querySelector(".player-score").textContent = "Human: " +  playerScore;
         document.querySelector(".robot-score").textContent = "Robot: " +  robotScore;
         document.querySelector(".ties-score").textContent = "Ties: " +  tiesScore;
@@ -80,20 +81,7 @@ function playerWin(){
     divPara.textContent = "You won! Thank you for saving humanity! :)";
     div.appendChild(divPara);
     divContainer.appendChild(div);
-
-    //CREATE PLAY AGAIN BUTTON
-    const divPlayAgain = document.createElement("div");
-    divPlayAgain.classList.add("divPlayAgain");
-    const playAgain = document.createElement("button");
-    playAgain.classList.add("playAgain");
-    playAgain.textContent = "PLAY AGAIN";
-    divPlayAgain.appendChild(playAgain);
-    divContainer.appendChild(divPlayAgain);
-
-    //PLAY AGAIN RESET
-    playAgain.addEventListener('click', () => {
-        location.reload();
-        })
+    playAgainButton(); 
 }
 
 // Function when robot wins
@@ -107,7 +95,18 @@ function robotWin(){
     divPara.textContent = "You lost ... The end is near :(";
     div.appendChild(divPara);
     divContainer.appendChild(div);
-    
+    playAgainButton();
+}
+
+//Function to make imgs/options invisibles
+function invisibleImgs(){
+    const containerHidden = document.querySelector(".container-options");
+    containerHidden.style.visibility = "hidden";
+}
+
+function playAgainButton(){
+    const divContainer = document.querySelector(".container-score");
+
     //CREATE PLAY AGAIN BUTTON
     const divPlayAgain = document.createElement("div");
     divPlayAgain.classList.add("divPlayAgain");
@@ -116,19 +115,12 @@ function robotWin(){
     playAgain.textContent = "PLAY AGAIN";
     divPlayAgain.appendChild(playAgain);
     divContainer.appendChild(divPlayAgain);
+
     //PLAY AGAIN RESET
     playAgain.addEventListener('click', () => {
         location.reload();
-        })
+        }) 
 
-    
-    
-}
-
-//Function to make imgs/options invisibles
-function invisibleImgs(){
-    const containerHidden = document.querySelector(".container-options");
-    containerHidden.style.visibility = "hidden";
 }
 
 game();
