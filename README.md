@@ -1,4 +1,3 @@
 # rps
 
-Rock paper scissors game.
-arroz
+Rock paper scissors game!
