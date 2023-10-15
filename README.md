@@ -1,7 +1,5 @@
 # Rock, Paper, Scissors Game
 
-![Game Screenshot](screenshot.png)
-
 This is a simple Rock, Paper, Scissors game developed as part of my learning journey with [The Odin Project](https://www.theodinproject.com/). It's a classic hand game that you can play against the computer.
 
 ## Features
